@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+$mainBackgroundColor: #F9EEDD;
+$secondaryBackgroundColor: rgba(239, 237, 227, 0.8);
+$officialGreenFontColor: #626E45;
+$contrastFontColor: #C4854B;
+
+.panel__background--main {
+  background-color: $mainBackgroundColor;
+  padding: 5px;
+}
+.panel__background--secondary {
+  background-color: $secondaryBackgroundColor;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.content__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+body {
+  background-color: $mainBackgroundColor;
+}
+
+.loading-panel {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.logo__background {
+  width: 143px;
+  height: 58px;
+  background-image: url("assets/images/Capa_1.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.loading-text {
+  color: $contrastFontColor;
+  position: relative;
+}
+
+.loading-text::after {
+  content: "";
+  position: absolute;
+  animation: loading-dots 1s infinite steps(4);
+}
+
+@keyframes loading-dots {
+  0%, 100% {
+    content: "";
+  }
+
+  25% {
+    content: ".";
+  }
+
+  25% {
+    content: "..";
+  }
+
+  75% {
+    content: "...";
+  }
+}
+
