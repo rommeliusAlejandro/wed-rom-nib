@@ -13,9 +13,9 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    /*this.bootTimer = setInterval(()=> {
+    this.bootTimer = setInterval(()=> {
       this.loading = false;
-    }, 1500);*/
+    }, 1500);
   }
 
 }

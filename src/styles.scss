@@ -4,9 +4,9 @@ $secondaryBackgroundColor: rgba(239, 237, 227, 0.8);
 $officialGreenFontColor: #626E45;
 $contrastFontColor: #C4854B;
 
-@mixin background__position($size) {
+@mixin background__position($size, $position: center) {
   background-size: $size;
-  background-position: center;
+  background-position: $position;
   background-repeat: no-repeat;
 }
 
@@ -23,7 +23,7 @@ $contrastFontColor: #C4854B;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35vh;
+  height: 25vh;
   flex-direction: column;
 }
 
@@ -74,9 +74,14 @@ body {
 
 /*flowers*/
 
-.flower__grid {
+.flower__3grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.flower__4grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
 }
 
 @mixin flower__size($w, $h) {
@@ -86,39 +91,40 @@ body {
 }
 
 .flower-up-right {
-  background-image: url("assets/images/Vector-2.png");
-  @include background__position(auto);
+  background-image: url("assets/images/flower-up-left4.png");
+  @include background__position(contain);
   @include flower__size(30vw, 15vh);
 }
 
 .flower-up-left {
-  background-image: url("assets/images/Vector-3.png");
-  @include background__position(auto);
+  background-image: url("assets/images/flower-up-right.png");
+  @include background__position(contain);
   @include flower__size(30vw, 15vh);
 }
 
 
 .branch-down-left {
-  background-image: url("assets/images/Vector-5.png");
-  @include background__position(auto);
-  @include flower__size(30vw, 15vh);
+  background-image: url("assets/images/branch-left.png");
+  @include background__position(contain);
+  @include flower__size(30vw, 20vh);
 }
 
 .branch-down-right {
-  background-image: url("assets/images/Vector-4.png");
-  @include background__position(auto);
-  @include flower__size(30vw, 15vh);
+  background-image: url("assets/images/branch-right.png");
+  @include background__position(contain);
+  @include flower__size(30vw, 20vh);
 }
 
 .sparks-down-up {
-  background-image: url("assets/images/Vector.png");
-  @include background__position(auto);
-  @include flower__size(30vw, 15vh);
+  background-image: url("assets/images/sparkLeft.png");
+  @include background__position(contain, bottom);
+  @include flower__size(15vw, 25vh);
+  align-self: end;
 }
 
 .flower-center_big {
-  background-image: url("assets/images/Vector-6.png");
-  @include background__position(auto);
-  @include flower__size(30vw, 15vh);
+  background-image: url("assets/images/big-flower.png");
+  @include background__position(contain);
+  @include flower__size(50vw, 25vh);
 }
 
