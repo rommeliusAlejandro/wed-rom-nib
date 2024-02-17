@@ -4,9 +4,14 @@ $secondaryBackgroundColor: rgba(239, 237, 227, 0.8);
 $officialGreenFontColor: #626E45;
 $contrastFontColor: #C4854B;
 
+@mixin background__position($size) {
+  background-size: $size;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .panel__background--main {
   background-color: $mainBackgroundColor;
-  padding: 5px;
 }
 .panel__background--secondary {
   background-color: $secondaryBackgroundColor;
@@ -18,27 +23,24 @@ $contrastFontColor: #C4854B;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 35vh;
   flex-direction: column;
 }
 
 body {
   background-color: $mainBackgroundColor;
+  margin: 0px;
 }
 
 .loading-panel {
-  min-width: 100vw;
-  min-height: 100vh;
+
 }
 
 .logo__background {
   width: 143px;
   height: 58px;
   background-image: url("assets/images/Capa_1.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  @include background__position(cover)
 }
 
 .loading-text {
@@ -68,5 +70,55 @@ body {
   75% {
     content: "...";
   }
+}
+
+/*flowers*/
+
+.flower__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@mixin flower__size($w, $h) {
+  position: relative;
+  width: $w;
+  height: $h;
+}
+
+.flower-up-right {
+  background-image: url("assets/images/Vector-2.png");
+  @include background__position(auto);
+  @include flower__size(30vw, 15vh);
+}
+
+.flower-up-left {
+  background-image: url("assets/images/Vector-3.png");
+  @include background__position(auto);
+  @include flower__size(30vw, 15vh);
+}
+
+
+.branch-down-left {
+  background-image: url("assets/images/Vector-5.png");
+  @include background__position(auto);
+  @include flower__size(30vw, 15vh);
+}
+
+.branch-down-right {
+  background-image: url("assets/images/Vector-4.png");
+  @include background__position(auto);
+  @include flower__size(30vw, 15vh);
+}
+
+.sparks-down-up {
+  background-image: url("assets/images/Vector.png");
+  @include background__position(auto);
+  @include flower__size(30vw, 15vh);
+}
+
+.flower-center_big {
+  background-image: url("assets/images/Vector-6.png");
+  @include background__position(auto);
+  @include flower__size(30vw, 15vh);
 }
 

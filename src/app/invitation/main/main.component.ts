@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  loading: boolean = true;
+  bootTimer: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    /*this.bootTimer = setInterval(()=> {
+      this.loading = false;
+    }, 1500);*/
   }
 
 }
