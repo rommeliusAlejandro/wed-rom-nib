@@ -1,18 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-$mainBackgroundColor: #F9EEDD;
-$secondaryBackgroundColor: rgba(239, 237, 227, 0.8);
-$officialGreenFontColor: #626E45;
-$contrastFontColor: #C4854B;
 
-@mixin background__position($size) {
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Variables */
+$mainBackgroundColor: #F9EEDD;
+$secondaryBackgroundColor: #FFFAE9;
+$titleTextColor: #626E45;
+$contrastFontColor: #C4854B;
+$secondaryTextColor: #8B4C1F;
+$bodyTextColor: #736C66;
+
+@mixin background__position($size, $position: center) {
   background-size: $size;
-  background-position: center;
+  background-position: $position;
   background-repeat: no-repeat;
+}
+
+@mixin inner__container {
+  border-radius: 20px;
+  margin: 30px;
+  background-color: $secondaryBackgroundColor;
 }
 
 .panel__background--main {
   background-color: $mainBackgroundColor;
 }
+
 .panel__background--secondary {
   background-color: $secondaryBackgroundColor;
   padding: 10px;
@@ -23,7 +38,7 @@ $contrastFontColor: #C4854B;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35vh;
+  min-height: 25vh;
   flex-direction: column;
 }
 
@@ -74,9 +89,14 @@ body {
 
 /*flowers*/
 
-.flower__grid {
+.flower__3grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.flower__4grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
 }
 
 @mixin flower__size($w, $h) {
@@ -86,39 +106,174 @@ body {
 }
 
 .flower-up-right {
-  background-image: url("assets/images/Vector-2.png");
-  @include background__position(auto);
+  background-image: url("assets/images/flower-up-left4.png");
+  @include background__position(contain);
   @include flower__size(30vw, 15vh);
 }
 
 .flower-up-left {
-  background-image: url("assets/images/Vector-3.png");
-  @include background__position(auto);
+  background-image: url("assets/images/flower-up-right.png");
+  @include background__position(contain);
   @include flower__size(30vw, 15vh);
 }
 
 
 .branch-down-left {
-  background-image: url("assets/images/Vector-5.png");
-  @include background__position(auto);
-  @include flower__size(30vw, 15vh);
+  background-image: url("assets/images/branch-left.png");
+  @include background__position(contain);
+  @include flower__size(30vw, 20vh);
 }
 
 .branch-down-right {
-  background-image: url("assets/images/Vector-4.png");
-  @include background__position(auto);
-  @include flower__size(30vw, 15vh);
+  background-image: url("assets/images/branch-right.png");
+  @include background__position(contain);
+  @include flower__size(30vw, 20vh);
 }
 
 .sparks-down-up {
-  background-image: url("assets/images/Vector.png");
-  @include background__position(auto);
-  @include flower__size(30vw, 15vh);
+  background-image: url("assets/images/sparkLeft.png");
+  @include background__position(contain, bottom);
+  @include flower__size(15vw, 25vh);
+  align-self: end;
 }
 
 .flower-center_big {
-  background-image: url("assets/images/Vector-6.png");
-  @include background__position(auto);
-  @include flower__size(30vw, 15vh);
+  background-image: url("assets/images/big-flower.png");
+  @include background__position(contain);
+  @include flower__size(50vw, 25vh);
 }
 
+/*bildboard styles */
+.bildboard__background {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .button__go-down {
+    position: absolute;
+    top: 73vh;
+  }
+}
+
+/* counter */
+.counter__container {
+
+  @include inner__container;
+
+  h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: $titleTextColor;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+  p.content-share_counter {
+    font-size: 16px;
+    color: $bodyTextColor;
+    margin: 0px;
+  }
+
+  p.content-remaining_counter {
+    font-size: 24px;
+    color: $bodyTextColor;
+    font-weight: bold;
+    margin: 0px;
+  }
+
+  p.content-date_counter {
+    font-size: 12px;
+    color: $secondaryTextColor;
+    margin: 0px;
+  }
+
+  .novios__picture {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .counter__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .counter-container__background {
+    background-image: url("assets/images/counter-background.png");
+    @include background__position(contain);
+  }
+}
+
+/*where when */
+.where-when__container {
+  @include inner__container;
+
+  h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: $titleTextColor;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+  p.time__style {
+    font-family: 'Libre Baskerville', serif;
+    color: $secondaryTextColor;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .main--where {
+    img.icon__size {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  img.arrows__size {
+    width: 70vw;
+    height: 2vh;
+  }
+
+  p.date__content {
+    font-weight: bold;
+    font-size: 24px;
+    color: $secondaryTextColor;
+  }
+
+  p.date__content::after {
+    content: url("assets/images/green-leaves-small-right.png");
+  }
+
+  p.date__content::before {
+    content: url("assets/images/green-leaves-small-left.png");
+  }
+
+  p.address__style {
+    font-family: 'PT Serif', serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: $bodyTextColor;
+  }
+
+  img.yellow-flowers__size {
+    width: 70vw;
+    height: 15vh;
+  }
+
+  .speech--when {
+    img.icon__size {
+      width: 181px;
+      height: 122px;
+    }
+  }
+
+  .party--when {
+    img.sparks__position {
+      align-self: center;
+    }
+  }
+
+}
