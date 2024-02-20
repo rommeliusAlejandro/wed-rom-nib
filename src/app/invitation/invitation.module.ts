@@ -9,6 +9,7 @@ import { CounterComponent } from './counter/counter.component';
 import { BildboardComponent } from './bildboard/bildboard.component';
 import { MainComponent } from './main/main.component';
 import { LoadingComponent } from './loading/loading.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LoadingComponent } from './loading/loading.component';
     CounterComponent,
     BildboardComponent,
     MainComponent,
-    LoadingComponent
+    LoadingComponent,
+    MapComponent
   ],
   exports: [
     MainComponent
