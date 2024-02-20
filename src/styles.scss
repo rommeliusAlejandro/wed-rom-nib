@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Variables */
 $mainBackgroundColor: #F9EEDD;
 $secondaryBackgroundColor: #FFFAE9;
 $titleTextColor: #626E45;
@@ -12,9 +18,16 @@ $bodyTextColor: #736C66;
   background-repeat: no-repeat;
 }
 
+@mixin inner__container {
+  border-radius: 20px;
+  margin: 30px;
+  background-color: $secondaryBackgroundColor;
+}
+
 .panel__background--main {
   background-color: $mainBackgroundColor;
 }
+
 .panel__background--secondary {
   background-color: $secondaryBackgroundColor;
   padding: 10px;
@@ -25,7 +38,7 @@ $bodyTextColor: #736C66;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  min-height: 25vh;
   flex-direction: column;
 }
 
@@ -145,11 +158,11 @@ body {
 
 /* counter */
 .counter__container {
-  border-radius: 20px;
-  margin: 30px;
-  background-color: $secondaryBackgroundColor;
+
+  @include inner__container;
 
   h2 {
+    font-family: 'Libre Baskerville', serif;
     color: $titleTextColor;
     font-size: 32px;
     font-weight: bold;
@@ -191,4 +204,76 @@ body {
     background-image: url("assets/images/counter-background.png");
     @include background__position(contain);
   }
+}
+
+/*where when */
+.where-when__container {
+  @include inner__container;
+
+  h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: $titleTextColor;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+  p.time__style {
+    font-family: 'Libre Baskerville', serif;
+    color: $secondaryTextColor;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .main--where {
+    img.icon__size {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  img.arrows__size {
+    width: 70vw;
+    height: 2vh;
+  }
+
+  p.date__content {
+    font-weight: bold;
+    font-size: 24px;
+    color: $secondaryTextColor;
+  }
+
+  p.date__content::after {
+    content: url("assets/images/green-leaves-small-right.png");
+  }
+
+  p.date__content::before {
+    content: url("assets/images/green-leaves-small-left.png");
+  }
+
+  p.address__style {
+    font-family: 'PT Serif', serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: $bodyTextColor;
+  }
+
+  img.yellow-flowers__size {
+    width: 70vw;
+    height: 15vh;
+  }
+
+  .speech--when {
+    img.icon__size {
+      width: 181px;
+      height: 122px;
+    }
+  }
+
+  .party--when {
+    img.sparks__position {
+      align-self: center;
+    }
+  }
+
 }
