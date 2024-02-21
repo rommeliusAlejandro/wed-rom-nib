@@ -1,6 +1,10 @@
 {
   "name": "wed-rom-nib",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.16.0",
+    "npm": "8.11.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open --port 8080 --host 0.0.0.0",
