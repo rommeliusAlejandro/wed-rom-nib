@@ -11,7 +11,7 @@
     "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start": "ng build --prod && node server.js"
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
