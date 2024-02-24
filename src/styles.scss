@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* imports */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 /* Variables */
 $mainBackgroundColor: #F9EEDD;
@@ -44,12 +44,80 @@ $bodyTextColor: #736C66;
 
 body {
   background-color: $mainBackgroundColor;
-  margin: 0px;
+  margin: 0;
 }
 
 .loading-panel {
 
 }
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 1; /* ensure it's above other content */
+  display: flex;
+  justify-content: center; /* horizontally center content */
+  align-items: center; /* vertically center content */
+
+  .alert {
+    width: 70vw;
+    height: 25vh;
+    border-radius: 20px;
+    padding: 25px;
+    background-color: #FFFFFF;
+
+    h2 {
+      color: $titleTextColor;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Libre Baskerville', serif;
+      text-align: center;
+    }
+
+    p {
+      color: $bodyTextColor;
+      font-size: 14px;
+      font-weight: normal;
+      font-family: 'Nunito Sans', serif;
+      text-align: center;
+    }
+
+    button {
+      background-color: #626E45;
+      color: #FFFFFF;
+      padding: 15px;
+      width: 70%;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Libre Baskerville', serif;
+      border-radius: 40px;
+    }
+  }
+}
+
+.backdrop.inactive {
+  display: none;
+}
+
+img.arrows__size {
+  width: 70vw;
+  height: 2vh;
+}
+
+.rose-centered__style {
+  @include background__position(cover);
+  background-image: url("assets/images/confirmationFormFlowers.png");
+  width: 30vw;
+  height: 10vh;
+  top: -39px;
+  position: relative;
+  left: 35%;
+}
+
 
 .logo__background {
   width: 143px;
@@ -89,12 +157,17 @@ body {
 
 /*flowers*/
 
-.flower__3grid {
+.two-column__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tree-column__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.flower__4grid {
+.four-column__grid {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
 }
@@ -172,20 +245,20 @@ body {
   p.content-share_counter {
     font-size: 16px;
     color: $bodyTextColor;
-    margin: 0px;
+    margin: 0;
   }
 
   p.content-remaining_counter {
     font-size: 24px;
     color: $bodyTextColor;
     font-weight: bold;
-    margin: 0px;
+    margin: 0;
   }
 
   p.content-date_counter {
     font-size: 12px;
     color: $secondaryTextColor;
-    margin: 0px;
+    margin: 0;
   }
 
   .novios__picture {
@@ -276,4 +349,112 @@ body {
     }
   }
 
+}
+
+/* map */
+.map__container {
+  @include inner__container;
+
+  h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: $titleTextColor;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+  img.arrows__size {
+    width: 70vw;
+    height: 2vh;
+  }
+
+  p.address__style {
+    font-family: 'Nunito Sans', serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: $bodyTextColor;
+  }
+
+  p.address-references__style {
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: $titleTextColor;
+  }
+
+  .map-frame__container {
+    width: 70vw;
+    height: 40vh;
+  }
+}
+
+/*Confirmation Form*/
+.confirmation-form__backdrop {
+
+  img {
+    width: 100vw;
+    height: 20vh;
+  }
+}
+.confirmation-form__container {
+
+  @include inner__container;
+
+  .content__center {
+    min-height: 0;
+  }
+
+  p.instruction__style {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+
+  }
+
+  .four-column__grid {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  button.radio--button {
+    width: 30px;
+    height: 30px;
+    border-color: $titleTextColor;
+    border-radius: 100px;
+    background-color: $secondaryBackgroundColor;
+    margin-right: 10px;
+  }
+
+  button.clicked {
+    background-color: $titleTextColor !important;
+  }
+
+  .four-column__grid label {
+    align-self: center;
+  }
+
+  label.field-label__style {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: $bodyTextColor;
+  }
+
+  button.button-confirm__style {
+    background-color: #626E45;
+    color: #FFFFFF;
+    padding: 15px;
+    width: 70%;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Libre Baskerville', serif;
+    border-radius: 40px;
+  }
+
+  .centered__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
 }

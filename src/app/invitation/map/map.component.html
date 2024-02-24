@@ -1,0 +1,24 @@
+<div class="backdrop" [class.inactive]="alertHidden">
+  <div class="alert content__center">
+    <h2>Ambos eventos es sin niños ni niñas</h2>
+    <p>Por temas de organización, te pedimos que en esta ocasión se queden en casa.
+      ¡Agradecemos de corazón tu colaboración!</p>
+    <button (click)="hideAlert()">Entendido</button>
+  </div>
+</div>
+<div class="map__container">
+  <div class="content__center">
+    <h2>Como llegar</h2>
+    <img class="arrows__size" src="assets/images/doubleArrows.png"/>
+    <img src="assets/images/curved-lines.png" />
+    <p class="address__style">Calle Paititi</p>
+    <p class="address__style">Comunidad Sirpita, Tiquipaya</p>\
+    <p class="address-references__style"><b>Referencias: </b>Templo de Sirpita, U.E. Centro de Vida</p>
+    <img src="assets/images/olive-leaves.png"/>
+    <div class="map-frame__container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d945.2650773505973!2d-66.2160419332748!3d-17.364292353591317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sbo!4v1708469389871!5m2!1ses-419!2sbo"
+              width="100%" height="100%" style="border:0;"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>

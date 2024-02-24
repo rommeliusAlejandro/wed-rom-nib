@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WhatsappSenderService} from '../services/whatsapp-sender.service';
 
 @Component({
   selector: 'app-confirmation-form',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationFormComponent implements OnInit {
 
-  constructor() { }
+  confirm: string = "";
+  fullName: string = "";
+  phoneNumber: string = "";
+
+  constructor(
+    private readonly whatsappSenderService: WhatsappSenderService
+  ) {
+  }
 
   ngOnInit(): void {
+  }
+
+  checkRadioButton(option: string): void {
+    this.confirm = option;
+  }
+
+  confirmPresence(): void {
+    this.whatsappSenderService.sendMessage({
+      confirm: this.confirm,
+      fullName: this.fullName,
+      phoneNumber: this.phoneNumber
+    });
   }
 
 }

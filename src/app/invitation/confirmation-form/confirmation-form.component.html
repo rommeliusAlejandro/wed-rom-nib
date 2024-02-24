@@ -1,1 +1,34 @@
-<p>confirmation-form works!</p>
+<div class="confirmation-form__backdrop">
+  <img src="assets/images/confirmationFormBanner.png"/>
+</div>
+<div class="rose-centered__style"></div>
+<div class="confirmation-form__container">
+  <div class="content__center">
+    <h2>¿Asistirás?</h2>
+    <img src="assets/images/doubleArrows.png" class="arrows__size"/>
+    <p class="instruction__style">Por favor, confirma tu asistencia hasta el Lunes 18 de Marzo</p>
+  </div>
+  <div class="confirmation-form__container">
+    <div class="content__center">
+      <div class="four-column__grid">
+        <button class="radio--button" (click)="checkRadioButton('Si')" [class.clicked]="confirm === 'Si'"></button>
+        <label>Si, ahi estare.</label>
+      </div>
+      <div class="four-column__grid">
+        <button class="radio--button" (click)="checkRadioButton('No')" [class.clicked]="confirm === 'No'"></button>
+        <label>No, lo siento.</label>
+      </div>
+    </div>
+    <div class="centered__content input-container__style">
+      <label class="field-label__style" for="full-name">Nombre Completo *</label>
+      <input type="text" required="required" id="full-name" [(ngModel)]="fullName"/>
+    </div>
+    <div class="centered__content input-container__style">
+      <div><label class="field-label__style" for="full-name">Telefono Celular *</label></div><br/>
+      <div><input type="number" required="required" id="phonenumber" [(ngModel)]="phoneNumber"/></div>
+    </div>
+    <div class="centered__content">
+      <button class="button-confirm__style" (click)="confirmPresence()">Confirmar</button>
+    </div>
+  </div>
+</div>
