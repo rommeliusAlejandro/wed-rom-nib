@@ -7,15 +7,15 @@
   </div>
   <div class="confirmation-form__container">
     <div class="content__center">
-      <input type="radio" name="confirm" id="confirm-yes" [ngModel]="confirm" />
+      <input type="radio" name="confirm" id="confirm-yes"  />
       <label for="confirm-yes">Si, ahi estare.</label>
-      <input type="radio" name="confirm" id="confirm-no" [ngModel]="confirm"/>
+      <input type="radio" name="confirm" id="confirm-no" />
       <label for="confirm-no">No, lo siento.</label>
     </div>
     <label for="full-name">Nombre Completo</label>
-    <input type="text" required="required" id="full-name" [ngModel]="fullName" />
+    <input type="text" required="required" id="full-name" [(ngModel)]="fullName" value="true" />
     <label for="full-name">Telefono Celular</label>
-    <input type="number" required="required" id="phonenumber" [ngModel]="fullName" />
+    <input type="number" required="required" id="phonenumber" [(ngModel)]="phoneNumber" value="false" />
     <button (click)="confirmPresence()">Confirmar</button>
   </div>
 </div>
