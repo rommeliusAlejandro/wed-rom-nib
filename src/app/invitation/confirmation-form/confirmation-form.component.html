@@ -1,21 +1,32 @@
-<img src="assets/images/confirmationFormBanner.png"/>
+<div class="confirmation-form__backdrop">
+  <img src="assets/images/confirmationFormBanner.png"/>
+</div>
+<div class="rose-centered__style"></div>
 <div class="confirmation-form__container">
   <div class="content__center">
     <h2>¿Asistirás?</h2>
-    <img src="assets/images/doubleArrows.png"/>
-    <p>Por favor, confirma tu asistencia hasta el Lunes 18 de Marzo</p>
+    <img src="assets/images/doubleArrows.png" class="arrows__size"/>
+    <p class="instruction__style">Por favor, confirma tu asistencia hasta el Lunes 18 de Marzo</p>
   </div>
   <div class="confirmation-form__container">
     <div class="content__center">
-      <input type="radio" name="confirm" id="confirm-yes" value="Si" [(ngModel)]="confirm"/>
-      <label for="confirm-yes">Si, ahi estare.</label>
-      <input type="radio" name="confirm" id="confirm-no" value="No" [(ngModel)]="confirm"/>
-      <label for="confirm-no">No, lo siento.</label>
+      <div class="four-column__grid">
+        <button class="radio--button"></button>
+        <input type="radio" name="confirm" id="confirm-yes" value="Si" [(ngModel)]="confirm"/>
+        <label for="confirm-yes">Si, ahi estare.</label>
+      </div>
+      <div class="four-column__grid">
+        <button class="radio--button"></button>
+        <input type="radio" name="confirm" id="confirm-no" value="No" [(ngModel)]="confirm"/>
+        <label for="confirm-no">No, lo siento.</label>
+      </div>
     </div>
-    <label for="full-name">Nombre Completo</label>
+    <label for="full-name">Nombre Completo *</label>
     <input type="text" required="required" id="full-name" [(ngModel)]="fullName"/>
-    <label for="full-name">Telefono Celular</label>
+    <label for="full-name">Telefono Celular *</label>
     <input type="number" required="required" id="phonenumber" [(ngModel)]="phoneNumber"/>
-    <button (click)="confirmPresence()">Confirmar</button>
+    <div class="centered__content">
+      <button class="button-confirm__style" (click)="confirmPresence()">Confirmar</button>
+    </div>
   </div>
 </div>
