@@ -20,8 +20,11 @@ $bodyTextColor: #736C66;
 
 @mixin inner__container {
   border-radius: 20px;
-  margin: 30px;
+  margin: 10px 30px;
   background-color: $secondaryBackgroundColor;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .panel__background--main {
@@ -38,8 +41,12 @@ $bodyTextColor: #736C66;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 25vh;
   flex-direction: column;
+  text-align: center;
+}
+
+img.icon__size {
+  margin-top: 10px;
 }
 
 body {
@@ -104,8 +111,16 @@ body {
 }
 
 img.arrows__size {
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 70vw;
   height: 2vh;
+}
+
+.right-border__line {
+  border-right: 2px solid #F9CCB4;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .rose-centered__style {
@@ -116,6 +131,7 @@ img.arrows__size {
   top: -39px;
   position: relative;
   left: 35%;
+  margin-bottom: -70px;
 }
 
 
@@ -221,6 +237,7 @@ img.arrows__size {
   img {
     width: 100%;
     height: 100%;
+    margin-top: -27px;
   }
 
   .button__go-down {
@@ -249,10 +266,13 @@ img.arrows__size {
   }
 
   p.content-remaining_counter {
+    font-family: "Libre Baskerville", sans-serif;
     font-size: 24px;
     color: $bodyTextColor;
-    font-weight: bold;
-    margin: 0;
+    font-weight: 700;
+    line-height: 43.44px;
+    margin-top: -30px;
+    margin-bottom: 0px;
   }
 
   p.content-date_counter {
@@ -262,6 +282,9 @@ img.arrows__size {
   }
 
   .novios__picture {
+    padding-top: 40px;
+    margin-left: -40px;
+    margin-right: -40px;
     img {
       width: 100%;
       height: 100%;
@@ -270,13 +293,36 @@ img.arrows__size {
 
   .counter__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .counter-container__background {
     background-image: url("assets/images/counter-background.png");
+    min-height: 30vh;
     @include background__position(contain);
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    text-align: center;
+    display: flex;
   }
+
+  .time-number__style {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+  .time-text__style {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+    color: $secondaryTextColor;
+  }
+
 }
 
 /*where when */
@@ -456,5 +502,6 @@ img.arrows__size {
     justify-content: center;
     align-items: center;
     padding: 5px;
+    text-align: center;
   }
 }
