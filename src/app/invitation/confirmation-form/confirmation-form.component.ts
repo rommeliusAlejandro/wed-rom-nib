@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationFormComponent implements OnInit {
 
-  constructor() { }
+  confirm: boolean;
+  fullName: string;
+  phoneNumber: string;
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  confirmPresence(): void{
   }
 
 }

@@ -1,1 +1,21 @@
-<p>confirmation-form works!</p>
+<img src="assets/images/confirmationFormBanner.png" />
+<div class="confirmation-form__container">
+  <div class="content__center">
+    <h2>¿Asistirás?</h2>
+    <img src="assets/images/doubleArrows.png" />
+    <p>Por favor, confirma tu asistencia hasta el Lunes 18 de Marzo</p>
+  </div>
+  <div class="confirmation-form__container">
+    <div class="content__center">
+      <input type="radio" name="confirm" id="confirm-yes" [ngModel]="confirm" />
+      <label for="confirm-yes">Si, ahi estare.</label>
+      <input type="radio" name="confirm" id="confirm-no" [ngModel]="confirm"/>
+      <label for="confirm-no">No, lo siento.</label>
+    </div>
+    <label for="full-name">Nombre Completo</label>
+    <input type="text" required="required" id="full-name" [ngModel]="fullName" />
+    <label for="full-name">Telefono Celular</label>
+    <input type="number" required="required" id="phonenumber" [ngModel]="fullName" />
+    <button (click)="confirmPresence()">Confirmar</button>
+  </div>
+</div>
