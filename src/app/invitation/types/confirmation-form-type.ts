@@ -2,7 +2,7 @@
  * @author rloayza
  */
 export type ConfirmationFormType = {
-  confirm: boolean,
+  confirm: string,
   fullName: string,
   phoneNumber: string
 }

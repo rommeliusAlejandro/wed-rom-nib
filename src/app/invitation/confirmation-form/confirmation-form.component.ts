@@ -8,9 +8,9 @@ import {WhatsappSenderService} from '../services/whatsapp-sender.service';
 })
 export class ConfirmationFormComponent implements OnInit {
 
-  confirm: boolean = true;
-  fullName: string;
-  phoneNumber: string;
+  confirm: string = "";
+  fullName: string = "";
+  phoneNumber: string = "";
 
   constructor(
     private readonly whatsappSenderService: WhatsappSenderService

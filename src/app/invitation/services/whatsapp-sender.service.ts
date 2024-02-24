@@ -9,14 +9,23 @@ export class WhatsappSenderService {
   constructor() { }
 
   public sendMessage(type: ConfirmationFormType): void {
-    const messagePositive = `https://wa.me/75944185/?text=Hola! muchas gracias por la invitación. Mi nombre es *${type.fullName}* y mi número es *${type.phoneNumber}* y *Si* asistiré a la boda.`;
-    const messageNegative = `https://wa.me/75944185/?text=Hola! muchas gracias por la invitación. Mi nombre es *${type.fullName}* y  *No* asistiré a la boda.`;
+    console.log(type);
 
-    let url = messagePositive;
-    if (!type.confirm) {
-      url = messageNegative;
+    const whatsappUrl = `https://wa.me/75944185/?text=`;
+    const messagePositive = `Hola! muchas gracias por la invitación. Mi nombre es *${type.fullName}* y mi número es *${type.phoneNumber}* y *Si* asistiré a la boda.`;
+    const messageNegative = `Hola! muchas gracias por la invitación. Mi nombre es *${type.fullName}* y *No* asistiré a la boda.`;
+
+    let text = 'failure';
+
+    console.log(typeof  type.confirm);
+    if(type.confirm === 'Si') {
+      text = messagePositive;
     }
 
-    window.open(url, "_blank");
+    if (type.confirm === 'No') {
+      text = messageNegative;
+    }
+
+    window.open(whatsappUrl+text, "_blank");
   }
 }
