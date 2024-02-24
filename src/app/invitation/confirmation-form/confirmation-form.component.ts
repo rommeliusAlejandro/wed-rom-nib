@@ -20,6 +20,10 @@ export class ConfirmationFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkRadioButton(option: string): void {
+    this.confirm = option;
+  }
+
   confirmPresence(): void {
     this.whatsappSenderService.sendMessage({
       confirm: this.confirm,

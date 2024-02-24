@@ -1,0 +1,23 @@
+.input-container__style {
+  margin-bottom: 20px;
+
+  input {
+    width: 100%;
+    border: none;
+    background-color: #FFFAE9;
+    border-bottom: 1px solid #626E45;
+    outline: none;
+    font-size: 16px;
+    padding-bottom: 5px;
+    transition: border-bottom-color 0.3s ease;
+  }
+
+  input:focus {
+    border-bottom-color: #2196f3;
+  }
+
+  label {
+    display: block;
+    margin-top: 5px;
+  }
+}

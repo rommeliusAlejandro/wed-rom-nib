@@ -421,15 +421,23 @@ img.arrows__size {
     height: 30px;
     border-color: $titleTextColor;
     border-radius: 100px;
-    background: none;
+    background-color: $secondaryBackgroundColor;
+    margin-right: 10px;
+  }
+
+  button.clicked {
+    background-color: $titleTextColor !important;
   }
 
   .four-column__grid label {
     align-self: center;
   }
 
-  input[type=radio] {
-    display: none;
+  label.field-label__style {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: $bodyTextColor;
   }
 
   button.button-confirm__style {
@@ -447,5 +455,6 @@ img.arrows__size {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5px;
   }
 }
