@@ -11,6 +11,9 @@ import {MainComponent} from './main/main.component';
 import {LoadingComponent} from './loading/loading.component';
 import {MapComponent} from './map/map.component';
 import {FormsModule} from '@angular/forms';
+import { ScheduleComponent } from './schedule/schedule.component';
+import {UiComponentsModule} from '../ui-components/ui-components.module';
+import { GiftsComponent } from './gifts/gifts.component';
 
 
 @NgModule({
@@ -24,14 +27,17 @@ import {FormsModule} from '@angular/forms';
     BildboardComponent,
     MainComponent,
     LoadingComponent,
-    MapComponent
+    MapComponent,
+    ScheduleComponent,
+    GiftsComponent
   ],
   exports: [
     MainComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    UiComponentsModule
   ]
 })
 export class InvitationModule {

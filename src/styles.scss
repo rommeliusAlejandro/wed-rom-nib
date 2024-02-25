@@ -92,18 +92,19 @@ body {
       font-family: 'Nunito Sans', serif;
       text-align: center;
     }
-
-    button {
-      background-color: #626E45;
-      color: #FFFFFF;
-      padding: 15px;
-      width: 70%;
-      font-size: 16px;
-      font-weight: bold;
-      font-family: 'Libre Baskerville', serif;
-      border-radius: 40px;
-    }
   }
+}
+
+button, a.button {
+  background-color: #626E45;
+  color: #FFFFFF;
+  padding: 15px;
+  width: 70%;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 40px;
+  text-decoration: none;
 }
 
 .backdrop.inactive {
@@ -447,9 +448,13 @@ img.arrows__size {
 
   p.address__style {
     font-family: 'Nunito Sans', serif;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 14px;
+    line-height: 21.98px;
     color: $bodyTextColor;
+    text-align: center;
+    white-space: pre-line;
+    margin: 0px;
   }
 
   p.address-references__style {
@@ -457,11 +462,33 @@ img.arrows__size {
     font-weight: bold;
     font-size: 14px;
     color: $titleTextColor;
+    margin: 0px;
+    line-height: 21.98px;
+  }
+
+  .olive-leaves__style {
+    width: 20vh;
+    margin-bottom: 20px;
   }
 
   .map-frame__container {
-    width: 70vw;
-    height: 40vh;
+    img {
+      width: 70vw;
+      height: 40vh;
+      border: 1px solid $titleTextColor;
+      border-radius: 20px;
+    }
+  }
+
+  .single-flower-blc__style {
+    @include background__position(contain);
+    background-image: url("assets/images/singlePinkFlower.png");
+    width: 15vw;
+    height: 10vh;
+    top: -25px;
+    position: relative;
+    left: -10%;
+    margin-bottom: -52px;
   }
 }
 
@@ -478,13 +505,27 @@ img.arrows__size {
 
   @include inner__container;
 
+  h2 {
+    font-family: "Libre Baskerville", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+
   .content__center {
     min-height: 0;
   }
 
   p.instruction__style {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    size: 14px;
+    text-align: center;
+    color: $bodyTextColor;
+    line-height: 17px;
 
   }
 
@@ -535,5 +576,56 @@ img.arrows__size {
     align-items: center;
     padding: 5px;
     text-align: center;
+  }
+}
+
+/* Schedule*/
+.schedule__container {
+  @include inner__container;
+
+  h2 {
+    font-family: "Libre Baskerville", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+  img.icon__size {
+    width: 48px;
+    height: 48px;
+  }
+
+  .zoom-meeting-det__style {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    size: 14px;
+    text-align: center;
+    color: $bodyTextColor;
+    line-height: 17px;
+  }
+}
+
+
+/*UI Components*/
+/* Schedule Items */
+.schedule-item__container {
+  .schedule-item-time__style {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    size: 16px;
+    text-align: center;
+    color: $secondaryTextColor;
+    line-height: 25px;
+  }
+
+  .schedule-item-text__style {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    size: 14px;
+    text-align: center;
+    color: $bodyTextColor;
+    line-height: 17px;
   }
 }
