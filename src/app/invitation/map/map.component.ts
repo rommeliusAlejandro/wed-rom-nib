@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-map',
@@ -9,7 +9,8 @@ export class MapComponent implements OnInit {
 
   alertHidden: boolean = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

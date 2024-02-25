@@ -46,7 +46,7 @@ $bodyTextColor: #736C66;
 }
 
 img.icon__size {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 body {
@@ -119,8 +119,8 @@ img.arrows__size {
 
 .right-border__line {
   border-right: 2px solid #F9CCB4;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .rose-centered__style {
@@ -285,6 +285,7 @@ img.arrows__size {
     padding-top: 40px;
     margin-left: -40px;
     margin-right: -40px;
+
     img {
       width: 100%;
       height: 100%;
@@ -305,6 +306,7 @@ img.arrows__size {
     padding: 5px;
     text-align: center;
     display: flex;
+    margin-bottom: 20px;
   }
 
   .time-number__style {
@@ -323,9 +325,38 @@ img.arrows__size {
     color: $secondaryTextColor;
   }
 
+  .pink-rose__centered_style {
+    @include background__position(cover);
+    background-image: url("assets/images/pinkRose.png");
+    width: 50vw;
+    height: 12vh;
+    top: -39px;
+    position: relative;
+    left: 25%;
+    margin-bottom: -80px;
+  }
+
 }
 
 /*where when */
+.where-when__container__banner {
+  img {
+    width: 100vw;
+    height: 30vh;
+  }
+}
+
+.guirnalda--centered__style {
+  @include background__position(cover);
+  background-image: url("assets/images/flowersGuirnalda.png");
+  width: 56vw;
+  height: 10vh;
+  top: -39px;
+  position: relative;
+  left: 22%;
+  margin-bottom: -70px;
+}
+
 .where-when__container {
   @include inner__container;
 
@@ -442,6 +473,7 @@ img.arrows__size {
     height: 20vh;
   }
 }
+
 .confirmation-form__container {
 
   @include inner__container;
