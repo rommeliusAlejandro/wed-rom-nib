@@ -1,8 +1,25 @@
 <div class="galery__container">
   <div class="content__center">
-    <img class="icon__size" src="assets/images/hearthIcon.png" />
+    <img class="icon__size" src="assets/images/hearthIcon.png"/>
     <h2>Recuerdos</h2>
-    <img class="arrows__size" src="assets/images/doubleArrows.png" />
+    <img class="arrows__size" src="assets/images/doubleArrows.png"/>
+    <div class="gallery">
+      <!--<img class="left-gallery-control__style" src="assets/images/left-arrow.png" />-->
+      <div class="photo-frame__style">
+        <ng-container *ngFor="let photoPath of photoPaths">
+          <img class="photo-gallery" src="{{folderPath}}{{photoPath}}" (click)="openViewer(folderPath+photoPath)"/>
+        </ng-container>
+      </div>
+      <!--<img class="right-gallery-control__style" src="assets/images/rigth-arrow.png" />-->
+    </div>
     <img class="yellow-flowers__size" src="assets/images/yellowBucket.png"/>
+  </div>
+</div>
+
+<!-- picture-viewer.component.html -->
+<div *ngIf="viewerOpen" class="picture-viewer">
+  <div class="backdrop" (click)="closeViewer()"></div>
+  <div class="image-container">
+    <img [src]="selectedImageUrl" alt="Image">
   </div>
 </div>

@@ -6,6 +6,7 @@
   <div class="content__center">
     <h2>¿Asistirás?</h2>
     <img src="assets/images/doubleArrows.png" class="arrows__size"/>
+    <h3>Esta invitacion es para <b>{{invitees}}</b> personas.</h3>
     <p class="instruction__style">Por favor, confirma tu asistencia hasta el Lunes 18 de Marzo</p>
   </div>
   <div class="confirmation-form__container">
@@ -21,7 +22,7 @@
     </div>
     <div class="centered__content input-container__style">
       <label class="field-label__style" for="full-name">Nombre Completo *</label><br>
-      <input type="text" required="required" id="full-name" [(ngModel)]="fullName"/>
+      <input type="text" required="required" id="full-name" [(ngModel)]="fullName" disabled >
     </div>
     <div class="centered__content input-container__style">
       <div><label class="field-label__style" for="full-name">Telefono Celular *</label></div><br>

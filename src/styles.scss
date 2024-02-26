@@ -114,8 +114,8 @@ button, a.button {
 img.arrows__size {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 70vw;
-  height: 2vh;
+  width: 70%;
+  height: auto;
 }
 
 .right-border__line {
@@ -247,7 +247,7 @@ img.yellow-flowers__size {
 .bildboard__background {
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     margin-top: -27px;
   }
 
@@ -273,6 +273,15 @@ img.yellow-flowers__size {
     font-size: 32px;
     font-weight: bold;
     margin: 10px;
+  }
+
+  h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
   }
 
   p.content-share_counter {
@@ -304,7 +313,7 @@ img.yellow-flowers__size {
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
     }
   }
 
@@ -357,8 +366,8 @@ img.yellow-flowers__size {
 /*where when */
 .where-when__container__banner {
   img {
-    width: 100vw;
-    height: 30vh;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -511,8 +520,8 @@ img.yellow-flowers__size {
 .confirmation-form__backdrop {
 
   img {
-    width: 100vw;
-    height: 20vh;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -524,6 +533,15 @@ img.yellow-flowers__size {
     font-family: "Libre Baskerville", sans-serif;
     font-weight: 700;
     font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+  h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 16px;
     line-height: 29px;
     text-align: center;
     color: $titleTextColor;
@@ -780,6 +798,8 @@ img.yellow-flowers__size {
     text-align: center;
     color: $secondaryTextColor;
     line-height: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .schedule-item-text__style {
@@ -789,6 +809,8 @@ img.yellow-flowers__size {
     text-align: center;
     color: $bodyTextColor;
     line-height: 17px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
 
