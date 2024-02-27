@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-galery',
@@ -58,7 +58,9 @@ export class GaleryComponent implements OnInit, AfterViewInit {
     const imageContainer = document.getElementById('photoFrameContainer');
     const images = Array.from(imageContainer.querySelectorAll('img'));
     images.sort((a, b) => {
-      return a.height - b.height; // Sort images by height
+      const difference = a.height - b.height;
+      console.log(difference);
+      return difference;
     });
     images.forEach(img => imageContainer.appendChild(img));
 
