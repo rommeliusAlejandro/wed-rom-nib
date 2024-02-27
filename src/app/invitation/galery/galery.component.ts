@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import Masonry from 'masonry-layout';
 
 @Component({
   selector: 'app-galery',
