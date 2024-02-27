@@ -5,7 +5,7 @@
     <img class="arrows__size" src="assets/images/doubleArrows.png"/>
     <div class="gallery">
       <!--<img class="left-gallery-control__style" src="assets/images/left-arrow.png" />-->
-      <div class="photo-frame__style">
+      <div class="photo-frame__style" id="photoFrameContainer">
         <ng-container *ngFor="let photoPath of photoPaths">
           <img class="photo-gallery" src="{{folderPath}}{{photoPath}}" (click)="openViewer(folderPath+photoPath)"/>
         </ng-container>

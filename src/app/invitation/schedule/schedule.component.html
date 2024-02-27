@@ -1,7 +1,7 @@
 <div class="schedule__container">
   <div class="content__center">
     <img class="icon__size" src="assets/images/scheduleIcon.png">
-    <h2>Agenda</h2>
+    <h2>Agenda Detallada</h2>
     <img class="arrows__size" src="assets/images/doubleArrows.png"/>
     <img src="assets/images/curved-lines.png"/>
     <ng-container *ngFor="let item of schedule">
@@ -18,6 +18,11 @@
       <p><b>Meeting ID:</b><i>954 258 2987</i></p>
       <p><b>Password:</b><i>5f1oLn</i></p>
     </div>
+    <img src="assets/images/curved-lines.png"/>
+    <ng-container *ngFor="let item of zoomSchedule">
+      <app-schedule-item [itemText]="item.text" [itemTime]="item.time"></app-schedule-item>
+    </ng-container>
+    <img src="assets/images/olive-leaves.png" />
   </div>
 </div>
 

@@ -7,16 +7,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  alertHidden: boolean = false;
-
   constructor() {
   }
 
   ngOnInit(): void {
-  }
-
-  public hideAlert(): void {
-    this.alertHidden = true;
   }
 
 }

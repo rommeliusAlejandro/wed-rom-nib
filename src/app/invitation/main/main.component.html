@@ -2,8 +2,10 @@
   <app-loading></app-loading>
 </section>
 <section [class.hide]="loading === true">
-  <app-bildboard></app-bildboard>
-  <app-counter></app-counter>
+  <app-bildboard (goDown)="scrollToCounter()"></app-bildboard>
+  <div #counterComponent>
+    <app-counter></app-counter>
+  </div>
   <app-where-when></app-where-when>
   <app-map></app-map>
   <app-schedule></app-schedule>

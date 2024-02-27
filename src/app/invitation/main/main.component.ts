@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -7,15 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  @ViewChild('counterComponent') counterComponent: ElementRef;
+
   loading: boolean = true;
   bootTimer: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    this.bootTimer = setInterval(()=> {
+    this.bootTimer = setInterval(() => {
       this.loading = false;
     }, 1500);
+  }
+
+  scrollToCounter() {
+    if (this.counterComponent) {
+      this.counterComponent.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
   }
 
 }

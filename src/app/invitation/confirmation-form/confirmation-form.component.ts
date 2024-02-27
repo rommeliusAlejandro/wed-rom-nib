@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {WhatsappSenderService} from '../services/whatsapp-sender.service';
 import {ActivatedRoute} from '@angular/router';
 
@@ -7,12 +7,16 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './confirmation-form.component.html',
   styleUrls: ['./confirmation-form.component.scss']
 })
-export class ConfirmationFormComponent implements OnInit {
+export class ConfirmationFormComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('confirmFormContainer') elementRef: ElementRef;
 
   confirm: string = "";
   fullName: string = "Pepito Perez";
   phoneNumber: string = "";
   invitees: number = 0;
+
+  alertHidden: boolean = true;
 
   constructor(
     private readonly whatsappSenderService: WhatsappSenderService,
@@ -24,6 +28,20 @@ export class ConfirmationFormComponent implements OnInit {
         this.invitees = params['params']['invitees'];
       });
   }
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        console.log('element is intersecting');
+        this.alertHidden = false;
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(this.elementRef.nativeElement);
+
+  }
+
 
   ngOnInit(): void {
   }
@@ -38,6 +56,10 @@ export class ConfirmationFormComponent implements OnInit {
       fullName: this.fullName,
       phoneNumber: this.phoneNumber
     });
+  }
+
+  public hideAlert(): void {
+    this.alertHidden = true;
   }
 
 }
