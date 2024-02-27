@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-bildboard',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BildboardComponent implements OnInit {
 
+  @Output()
+  goDown: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  goingDown() {
+    return this.goDown.emit(true);
   }
 
 }

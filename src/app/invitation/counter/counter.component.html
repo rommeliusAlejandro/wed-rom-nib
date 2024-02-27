@@ -5,14 +5,20 @@
   <div class="content__center">
     <p class="content-date_counter">6 DE ABRIL •2024</p>
     <h2>¡Nos casamos!</h2>
+    <h3>Hola {{inviteeName}}!</h3>
     <p class="content-share_counter">Queremos compartir este momento contigo.</p>
   </div>
-  <div class="content__center counter-container__background">
-    <p class="content-remaining_counter">Faltan</p>
-    <div class="counter__grid">
-      <div>{{days}} <br/> DIAS</div>
-      <div>{{hours}} <br/> HORAS</div>
-      <div>{{minutes}} <br/> MIN</div>
-      <div>{{seconds}} <br/> SEG</div>
+  <div class="counter-container__background">
+    <div>
+      <p class="content-remaining_counter">Faltan</p>
+      <div class="counter__grid">
+        <div class="right-border__line"><span class="time-number__style">{{days}}</span><br/><span
+          class="time-text__style">DIAS</span></div>
+        <div class="right-border__line"><span class="time-number__style">{{hours}}</span><br/><span
+          class="time-text__style">HORAS</span></div>
+        <div><span class="time-number__style">{{minutes}}</span><br/><span class="time-text__style">MINUTOS</span></div>
+      </div>
+    </div>
   </div>
+  <div class="pink-rose__centered_style"></div>
 </div>

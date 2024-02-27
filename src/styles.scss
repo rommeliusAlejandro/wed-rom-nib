@@ -20,8 +20,11 @@ $bodyTextColor: #736C66;
 
 @mixin inner__container {
   border-radius: 20px;
-  margin: 30px;
+  margin: 10px 30px;
   background-color: $secondaryBackgroundColor;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .panel__background--main {
@@ -38,8 +41,12 @@ $bodyTextColor: #736C66;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 25vh;
   flex-direction: column;
+  text-align: center;
+}
+
+img.icon__size {
+  margin-top: 20px;
 }
 
 body {
@@ -58,7 +65,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-  z-index: 1; /* ensure it's above other content */
+  z-index: 3; /* ensure it's above other content */
   display: flex;
   justify-content: center; /* horizontally center content */
   align-items: center; /* vertically center content */
@@ -85,18 +92,19 @@ body {
       font-family: 'Nunito Sans', serif;
       text-align: center;
     }
-
-    button {
-      background-color: #626E45;
-      color: #FFFFFF;
-      padding: 15px;
-      width: 70%;
-      font-size: 16px;
-      font-weight: bold;
-      font-family: 'Libre Baskerville', serif;
-      border-radius: 40px;
-    }
   }
+}
+
+button, a.button {
+  background-color: #626E45;
+  color: #FFFFFF;
+  padding: 15px;
+  width: 70%;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 40px;
+  text-decoration: none;
 }
 
 .backdrop.inactive {
@@ -104,8 +112,16 @@ body {
 }
 
 img.arrows__size {
-  width: 70vw;
-  height: 2vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 70%;
+  height: auto;
+}
+
+.right-border__line {
+  border-right: 2px solid #F9CCB4;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .rose-centered__style {
@@ -116,6 +132,7 @@ img.arrows__size {
   top: -39px;
   position: relative;
   left: 35%;
+  margin-bottom: -70px;
 }
 
 
@@ -172,6 +189,11 @@ img.arrows__size {
   grid-template-columns: 1fr 3fr 1fr;
 }
 
+.five-column__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
 @mixin flower__size($w, $h) {
   position: relative;
   width: $w;
@@ -216,17 +238,39 @@ img.arrows__size {
   @include flower__size(50vw, 25vh);
 }
 
+img.yellow-flowers__size {
+  width: 70vw;
+  height: 15vh;
+}
+
 /*bildboard styles */
 .bildboard__background {
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    margin-top: -27px;
   }
 
   .button__go-down {
     position: absolute;
     top: 73vh;
+
+    img {
+      width: 89px;
+      height: 51.11px;
+    }
   }
+}
+
+
+h2, h3, p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+button, a.button {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* counter */
@@ -242,6 +286,15 @@ img.arrows__size {
     margin: 10px;
   }
 
+  h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
   p.content-share_counter {
     font-size: 16px;
     color: $bodyTextColor;
@@ -249,10 +302,13 @@ img.arrows__size {
   }
 
   p.content-remaining_counter {
+    font-family: "Libre Baskerville", sans-serif;
     font-size: 24px;
     color: $bodyTextColor;
-    font-weight: bold;
-    margin: 0;
+    font-weight: 700;
+    line-height: 43.44px;
+    margin-top: -30px;
+    margin-bottom: 0px;
   }
 
   p.content-date_counter {
@@ -262,24 +318,82 @@ img.arrows__size {
   }
 
   .novios__picture {
+    padding-top: 40px;
+    margin-left: -40px;
+    margin-right: -40px;
+
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
     }
   }
 
   .counter__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
   }
 
   .counter-container__background {
     background-image: url("assets/images/counter-background.png");
+    min-height: 30vh;
     @include background__position(contain);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin-bottom: 40px;
+    margin-top: 20px;
   }
+
+  .time-number__style {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+  .time-text__style {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+    color: $secondaryTextColor;
+  }
+
+  .pink-rose__centered_style {
+    @include background__position(cover);
+    background-image: url("assets/images/pinkRose.png");
+    width: 50vw;
+    height: 12vh;
+    top: -39px;
+    position: relative;
+    left: 25%;
+    margin-bottom: -80px;
+  }
+
 }
 
 /*where when */
+.where-when__container__banner {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.guirnalda--centered__style {
+  @include background__position(cover);
+  background-image: url("assets/images/flowersGuirnalda.png");
+  width: 56vw;
+  height: 10vh;
+  top: -39px;
+  position: relative;
+  left: 22%;
+  margin-bottom: -70px;
+}
+
 .where-when__container {
   @include inner__container;
 
@@ -370,9 +484,13 @@ img.arrows__size {
 
   p.address__style {
     font-family: 'Nunito Sans', serif;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 14px;
+    line-height: 21.98px;
     color: $bodyTextColor;
+    text-align: center;
+    white-space: pre-line;
+    margin: 0px;
   }
 
   p.address-references__style {
@@ -380,11 +498,33 @@ img.arrows__size {
     font-weight: bold;
     font-size: 14px;
     color: $titleTextColor;
+    margin: 0px;
+    line-height: 21.98px;
+  }
+
+  .olive-leaves__style {
+    width: 20vh;
+    margin-bottom: 20px;
   }
 
   .map-frame__container {
-    width: 70vw;
-    height: 40vh;
+    img {
+      width: 70vw;
+      height: 40vh;
+      border: 1px solid $titleTextColor;
+      border-radius: 20px;
+    }
+  }
+
+  .single-flower-blc__style {
+    @include background__position(contain);
+    background-image: url("assets/images/singlePinkFlower.png");
+    width: 15vw;
+    height: 10vh;
+    top: -25px;
+    position: relative;
+    left: -10%;
+    margin-bottom: -52px;
   }
 }
 
@@ -392,21 +532,46 @@ img.arrows__size {
 .confirmation-form__backdrop {
 
   img {
-    width: 100vw;
-    height: 20vh;
+    width: 100%;
+    height: auto;
   }
 }
+
 .confirmation-form__container {
 
   @include inner__container;
+
+  h2 {
+    font-family: "Libre Baskerville", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+    margin-top: 30px;
+  }
+
+  h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
 
   .content__center {
     min-height: 0;
   }
 
   p.instruction__style {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    size: 14px;
+    text-align: center;
+    color: $bodyTextColor;
+    line-height: 17px;
 
   }
 
@@ -456,5 +621,216 @@ img.arrows__size {
     justify-content: center;
     align-items: center;
     padding: 5px;
+    text-align: center;
+  }
+}
+
+/* Schedule*/
+.schedule__container {
+  @include inner__container;
+
+  h2 {
+    font-family: "Libre Baskerville", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+  img.icon__size {
+    width: 48px;
+    height: 48px;
+  }
+
+  .zoom-meeting-det__style {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    size: 14px;
+    text-align: center;
+    color: $bodyTextColor;
+    line-height: 17px;
+  }
+}
+
+.dressing-rule__container {
+  @include inner__container;
+
+  h2 {
+    font-family: "Libre Baskerville", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+  img.icon__size {
+    width: 48px;
+    height: 48px;
+  }
+
+  .dressing-rule__item_style {
+
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 75vw;
+
+    .hat-icon__container {
+      align-self: center;
+      z-index: 2;
+    }
+
+    .dressing-rule-text__container {
+      background-color: #FFFCF3;
+      padding: 5px;
+      border-radius: 16px;
+      margin-left: -45px;
+      margin-bottom: 20px;
+
+      img {
+        width: 65%;
+      }
+    }
+
+    h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 29px;
+      text-align: center;
+      color: $titleTextColor;
+    }
+
+    p {
+      font-family: 'PT Serif', serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 19px;
+      text-align: center;
+      color: $bodyTextColor;
+    }
+
+    img.hat-image__style {
+      width: 88px;
+      height: 88px;
+    }
+
+    .woman-corner-icon__style {
+      @include background__position(cover);
+      background-image: url("assets/images/singlePinkFlower.png");
+      width: 30px;
+      height: 34px;
+      margin-bottom: -30px;
+      position: relative;
+      top: -17px;
+      left: 90%;
+    }
+
+    .man-corner-icon__style {
+      @include background__position(cover);
+      background-image: url("assets/images/confirmationFormFlowers.png");
+      width: 30px;
+      height: 34px;
+      margin-bottom: -30px;
+      position: relative;
+      top: -17px;
+      left: 90%;
+    }
+
+  }
+}
+
+/* Gifts */
+.git__container {
+  @include inner__container;
+
+  h2 {
+    font-family: "Libre Baskerville", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+  h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+  p {
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    color: $bodyTextColor;
+  }
+
+  img.yellow-flowers__size {
+    width: 50vw;
+    height: 10vh;
+    margin-top: 30px;
+  }
+}
+
+/* Galery */
+.galery__container {
+  @include inner__container;
+
+  h2 {
+    font-family: "Libre Baskerville", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $titleTextColor;
+  }
+
+  img.yellow-flowers__size {
+    width: 50vw;
+    height: 10vh;
+    margin-top: 30px;
+  }
+
+}
+
+/*UI Components*/
+/* Schedule Items */
+.schedule-item__container {
+  .schedule-item-time__style {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    size: 16px;
+    text-align: center;
+    color: $secondaryTextColor;
+    line-height: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .schedule-item-text__style {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    size: 14px;
+    text-align: center;
+    color: $bodyTextColor;
+    line-height: 17px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+/*Footer*/
+.footer__container {
+  img.footer__image {
+    width: 100vw;
+    height: auto;
   }
 }

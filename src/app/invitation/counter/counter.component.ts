@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-counter',
@@ -12,7 +13,13 @@ export class CounterComponent implements OnInit {
   hours: number = 0;
   seconds: number = 0;
 
-  constructor() {
+  inviteeName: string;
+
+  constructor(private route: ActivatedRoute) {
+    this.route.queryParamMap
+      .subscribe((params) => {
+        this.inviteeName = params['params']['fullName'];
+      });
   }
 
   ngOnInit(): void {

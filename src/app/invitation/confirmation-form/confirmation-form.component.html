@@ -1,3 +1,11 @@
+<div class="backdrop" [class.inactive]="alertHidden">
+  <div class="alert content__center">
+    <h2>Evento sin niños y niñas</h2>
+    <p>Por cuestiones de seguridad y logistica de nuestra boda, respetuosamete solicitamos  que los niños se queden en casa.
+      Agradecemos de corazón tu colaboración y apreciamos tu respeto por nuestra decision</p>
+    <button (click)="hideAlert()">Entendido</button>
+  </div>
+</div>
 <div class="confirmation-form__backdrop">
   <img src="assets/images/confirmationFormBanner.png"/>
 </div>
@@ -6,13 +14,14 @@
   <div class="content__center">
     <h2>¿Asistirás?</h2>
     <img src="assets/images/doubleArrows.png" class="arrows__size"/>
+    <h3>Esta invitación es para <b>{{invitees}}</b> personas.</h3>
     <p class="instruction__style">Por favor, confirma tu asistencia hasta el Lunes 18 de Marzo</p>
   </div>
-  <div class="confirmation-form__container">
+  <div class="confirmation-form__container" #confirmFormContainer>
     <div class="content__center">
       <div class="four-column__grid">
         <button class="radio--button" (click)="checkRadioButton('Si')" [class.clicked]="confirm === 'Si'"></button>
-        <label>Si, ahi estare.</label>
+        <label>Si, ahí estaré.</label>
       </div>
       <div class="four-column__grid">
         <button class="radio--button" (click)="checkRadioButton('No')" [class.clicked]="confirm === 'No'"></button>
@@ -20,11 +29,11 @@
       </div>
     </div>
     <div class="centered__content input-container__style">
-      <label class="field-label__style" for="full-name">Nombre Completo *</label>
-      <input type="text" required="required" id="full-name" [(ngModel)]="fullName"/>
+      <label class="field-label__style" for="full-name">Nombre Completo *</label><br>
+      <input type="text" required="required" id="full-name" [(ngModel)]="fullName" disabled >
     </div>
     <div class="centered__content input-container__style">
-      <div><label class="field-label__style" for="full-name">Telefono Celular *</label></div><br/>
+      <div><label class="field-label__style" for="full-name">Teléfono Celular *</label></div><br>
       <div><input type="number" required="required" id="phonenumber" [(ngModel)]="phoneNumber"/></div>
     </div>
     <div class="centered__content">

@@ -1,16 +1,20 @@
-<ng-container *ngIf="loading">
+<section [class.hide]="loading === false">
   <app-loading></app-loading>
-</ng-container>
-<ng-container *ngIf="!loading">
-  <app-bildboard></app-bildboard>
-  <app-counter></app-counter>
+</section>
+<section [class.hide]="loading === true">
+  <app-bildboard (goDown)="scrollToCounter()"></app-bildboard>
+  <div #counterComponent>
+    <app-counter></app-counter>
+  </div>
   <app-where-when></app-where-when>
   <app-map></app-map>
+  <app-schedule></app-schedule>
   <app-confirmation-form></app-confirmation-form>
   <app-dressing-rule></app-dressing-rule>
+  <app-gifts></app-gifts>
   <app-galery></app-galery>
   <app-footer></app-footer>
-</ng-container>
+</section>
 
 
 
