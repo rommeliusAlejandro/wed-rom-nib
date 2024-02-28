@@ -254,12 +254,20 @@ img.yellow-flowers__size {
   .button__go-down {
     position: absolute;
     top: 73vh;
+    animation: bounce 2s ;
 
     img {
       width: 89px;
       height: 51.11px;
     }
   }
+}
+
+@keyframes bounce {
+  0% { top: 79vh; }
+  10% { top: 73vh; }
+  80% { top: 79vh; }
+  100% {top: 73vh; }
 }
 
 
@@ -771,6 +779,11 @@ button, a.button {
     line-height: 23px;
     text-align: center;
     color: $bodyTextColor;
+  }
+
+  img.qr__style {
+    width: 100%;
+    height: auto;
   }
 
   img.yellow-flowers__size {

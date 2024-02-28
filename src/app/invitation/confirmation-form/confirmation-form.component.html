@@ -37,7 +37,10 @@
       <div><input type="number" required="required" id="phonenumber" [(ngModel)]="phoneNumber"/></div>
     </div>
     <div class="centered__content">
-      <button class="button-confirm__style" (click)="confirmPresence()">Confirmar</button>
+      <button class="button-confirm__style" (click)="confirmPresence()" >Confirmar</button>
+    </div>
+    <div class="centered__content">
+      <span class="alert" [class.hidden]="!showAlert">Por favor confirma tu asistencia.</span>
     </div>
   </div>
 </div>

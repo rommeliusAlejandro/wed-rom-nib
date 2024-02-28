@@ -52,18 +52,16 @@ export class GaleryComponent implements OnInit, AfterViewInit {
   viewerOpen: boolean = false;
 
   constructor() {
+
   }
 
   ngAfterViewInit(): void {
-    const imageContainer = document.getElementById('photoFrameContainer');
+    const imageContainer = document.getElementById('photoGallery');
     const images = Array.from(imageContainer.querySelectorAll('img'));
     images.sort((a, b) => {
-      const difference = a.height - b.height;
-      console.log(difference);
-      return difference;
+      return  b.height - a.height;
     });
     images.forEach(img => imageContainer.appendChild(img));
-
   }
 
   ngOnInit(): void {

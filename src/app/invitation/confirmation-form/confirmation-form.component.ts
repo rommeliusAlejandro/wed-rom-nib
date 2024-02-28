@@ -12,11 +12,13 @@ export class ConfirmationFormComponent implements OnInit, AfterViewInit {
   @ViewChild('confirmFormContainer') elementRef: ElementRef;
 
   confirm: string = "";
-  fullName: string = "Pepito Perez";
+  fullName: string = "";
   phoneNumber: string = "";
   invitees: number = 0;
 
   alertHidden: boolean = true;
+
+  showAlert: boolean = false;
 
   constructor(
     private readonly whatsappSenderService: WhatsappSenderService,
@@ -32,7 +34,6 @@ export class ConfirmationFormComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        console.log('element is intersecting');
         this.alertHidden = false;
         observer.disconnect();
       }
@@ -48,9 +49,16 @@ export class ConfirmationFormComponent implements OnInit, AfterViewInit {
 
   checkRadioButton(option: string): void {
     this.confirm = option;
+    this.showAlert = false;
   }
 
   confirmPresence(): void {
+
+    if(this.confirm === ""){
+      this.showAlert = true;
+      return;
+    }
+
     this.whatsappSenderService.sendMessage({
       confirm: this.confirm,
       fullName: this.fullName,
