@@ -1,3 +1,5 @@
+@import "../../../variables";
+
 .input-container__style {
   margin-bottom: 20px;
 
@@ -27,4 +29,39 @@
 }
 .hidden {
   display: none;
+}
+
+.heart-icon__container {
+  width: 35px;
+  height: 35px;
+}
+
+.icon-small__size {
+  width: 30px;
+  height: 30px;
+  animation: bouncing 4s infinite steps(4);
+  border-radius: 50px;
+}
+
+@keyframes bouncing {
+  0% {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $titleTextColor;
+  }
+  25% {
+    width: 35px;
+    height: 35px;
+    border: 1px solid $bodyTextColor;
+  }
+  50% {
+    width: 25px;
+    height: 25px;
+    border: 1px solid $secondaryBackgroundColor;
+  }
+  100% {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $contrastFontColor;
+  }
 }

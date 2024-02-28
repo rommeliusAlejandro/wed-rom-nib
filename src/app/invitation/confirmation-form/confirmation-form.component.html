@@ -15,6 +15,9 @@
     <h2>¿Asistirás?</h2>
     <img src="assets/images/doubleArrows.png" class="arrows__size"/>
     <h3>Esta invitación es para <b>{{invitees}}</b> personas.</h3>
+    <div class="heart-icon__container">
+      <img class="icon-small__size" src="assets/images/hearthIcon.png" (click)="alertHidden = false">
+    </div>
     <p class="instruction__style">Por favor, confirma tu asistencia hasta el Lunes 18 de Marzo</p>
   </div>
   <div class="confirmation-form__container" #confirmFormContainer>

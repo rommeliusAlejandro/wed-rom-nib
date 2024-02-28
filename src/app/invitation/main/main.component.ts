@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -8,6 +8,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 export class MainComponent implements OnInit {
 
   @ViewChild('counterComponent') counterComponent: ElementRef;
+  @ViewChild('songPlayer') songPlayerComponent: ElementRef;
 
   loading: boolean = true;
   bootTimer: any;
@@ -16,8 +17,11 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.bootTimer = setInterval(() => {
       this.loading = false;
+      this.songPlayerComponent.nativeElement.play();
+      this.songPlayerComponent.nativeElement.muted = false;
     }, 1500);
   }
 

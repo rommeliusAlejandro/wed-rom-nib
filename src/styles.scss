@@ -2,15 +2,9 @@
 
 /* imports */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "variables";
 
 
-/* Variables */
-$mainBackgroundColor: #F9EEDD;
-$secondaryBackgroundColor: #FFFAE9;
-$titleTextColor: #626E45;
-$contrastFontColor: #C4854B;
-$secondaryTextColor: #8B4C1F;
-$bodyTextColor: #736C66;
 
 @mixin background__position($size, $position: center) {
   background-size: $size;
@@ -661,6 +655,13 @@ button, a.button {
   }
 }
 
+/* Dressing Rule */
+.dressing-rule-banner__container {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
 .dressing-rule__container {
   @include inner__container;
 
