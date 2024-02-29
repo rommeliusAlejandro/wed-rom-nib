@@ -12,17 +12,27 @@ export class MainComponent implements OnInit {
 
   loading: boolean = true;
   bootTimer: any;
+  playingMusic: boolean = false;
 
   constructor() {
   }
 
   ngOnInit(): void {
-
-    this.bootTimer = setInterval(() => {
+    this.bootTimer = setTimeout(() => {
       this.loading = false;
-      this.songPlayerComponent.nativeElement.play();
-      this.songPlayerComponent.nativeElement.muted = false;
     }, 1500);
+  }
+
+  playMusic() {
+    this.songPlayerComponent.nativeElement.play();
+    this.songPlayerComponent.nativeElement.muted = false;
+    this.playingMusic = true;
+  }
+
+  muteMusic() {
+    this.songPlayerComponent.nativeElement.pause();
+    this.songPlayerComponent.nativeElement.muted = true;
+    this.playingMusic = false;
   }
 
   scrollToCounter() {

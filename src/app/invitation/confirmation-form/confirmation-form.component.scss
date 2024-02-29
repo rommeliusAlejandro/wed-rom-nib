@@ -41,8 +41,20 @@
   height: 30px;
   animation: bouncing 4s infinite steps(4);
   border-radius: 50px;
+  background-color: $titleTextColor;
+  padding: 3px;
+
+  i {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
+.alert-reminder__style {
+  font-size: 10px;
+  color: $bodyTextColor;
+}
 @keyframes bouncing {
   0% {
     width: 30px;
