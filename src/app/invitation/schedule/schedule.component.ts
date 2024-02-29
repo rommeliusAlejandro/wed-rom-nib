@@ -9,7 +9,7 @@ import {ScheduleItemType} from '../types/schedule-item.type';
 export class ScheduleComponent implements OnInit {
 
   schedule: ScheduleItemType[] = [
-    {time: '13:00', text: 'Ceremonia Civil.'},
+    {time: '14:00', text: 'Ceremonia Civil.'},
     {time: '16:00', text: 'Entrada de los Novios y acompañamiento.'},
     {time: '16:05', text: 'Consejo Biblico.'},
     {time: '17:00', text: 'Sesión de fotos con los invitados.'},
