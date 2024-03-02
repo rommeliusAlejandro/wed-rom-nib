@@ -6,7 +6,9 @@
     <div class="gallery">
       <div class="photo-frame__style" id="photoGallery">
         <ng-container *ngFor="let photoPath of photoPaths">
+          <div class="photo__grid">
             <img class="photo-gallery" src="{{folderPath}}{{photoPath}}" (click)="openViewer(folderPath+photoPath)"/>
+          </div>
         </ng-container>
       </div>
     </div>
