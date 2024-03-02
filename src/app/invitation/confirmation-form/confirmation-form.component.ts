@@ -18,7 +18,7 @@ export class ConfirmationFormComponent implements OnInit, AfterViewInit {
 
   alertHidden: boolean = true;
 
-  showAlert: boolean = false;
+  showFormAlert: boolean = false;
 
   constructor(
     private readonly whatsappSenderService: WhatsappSenderService,
@@ -49,13 +49,13 @@ export class ConfirmationFormComponent implements OnInit, AfterViewInit {
 
   checkRadioButton(option: string): void {
     this.confirm = option;
-    this.showAlert = false;
+    this.showFormAlert = false;
   }
 
   confirmPresence(): void {
 
     if(this.confirm === ""){
-      this.showAlert = true;
+      this.showFormAlert = true;
       return;
     }
 
@@ -68,6 +68,10 @@ export class ConfirmationFormComponent implements OnInit, AfterViewInit {
 
   public hideAlert(): void {
     this.alertHidden = true;
+  }
+
+  public showAlert(): void {
+    this.alertHidden = false;
   }
 
 }

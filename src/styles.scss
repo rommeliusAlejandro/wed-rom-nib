@@ -807,6 +807,16 @@ button, a.button {
     color: $titleTextColor;
   }
 
+  p {
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    color: $bodyTextColor;
+    font-style: italic;
+  }
+
   img.yellow-flowers__size {
     width: 50vw;
     height: 10vh;
